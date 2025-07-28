@@ -1,0 +1,48 @@
+.cell {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #000;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 80px;
+  box-shadow: 0 0 0 2px;
+  color: #000;
+}
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 230px;
+  margin: auto;
+}
+body {
+  font-family: "permanent Marker", cursive;
+  text-align: center;
+  background-image: url(pic.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.title {
+  padding: 20px;
+}
+.players {
+  grid-template-columns: repeat(2, auto);
+  display: grid;
+  padding: 20px;
+  font-weight: bold;
+
+  width: 300px;
+  margin: 0 auto;
+}
+
+.restart {
+  background: local;
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: 0px 4px 10px 0000;
+}
+.restart:hover {
+  scale: 0.9;
+}
