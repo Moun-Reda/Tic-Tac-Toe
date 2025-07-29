@@ -108,20 +108,20 @@ function checkWinner() {
 }
 function restartGame() {
   if (playerOScore.innerHTML === "5") {
-    window.alert("End Game... Player O won!");
+    WinnerModal("O");
     playerOScore.innerHTML = "0";
     playerXScore.innerHTML = "0";
     localStorage.setItem("playerOScore", "0");
     localStorage.setItem("playerXScore", "0");
   } else if (playerXScore.innerHTML === "5") {
-    window.alert("End Game... Player X won!");
+    WinnerModal("X");
     playerOScore.innerHTML = "0";
     playerXScore.innerHTML = "0";
     localStorage.setItem("playerOScore", "0");
     localStorage.setItem("playerXScore", "0");
   }
 }
-function newGame() {
+function restart() {
   tiltle.innerHTML = "Tic-Tac-Toe";
   let cell = document.getElementsByClassName("cell");
   for (let i = 0; i < cell.length; i++) {
@@ -131,4 +131,27 @@ function newGame() {
   turn = "x";
 
   restartGame();
+}
+function newGame() {
+  tiltle.innerHTML = "Tic-Tac-Toe";
+  let cell = document.getElementsByClassName("cell");
+  for (let i = 0; i < cell.length; i++) {
+    cell[i].innerHTML = "";
+    cell[i].style.backgroundColor = null;
+  }
+  turn = "x";
+  playerOScore.innerHTML = "0";
+  playerXScore.innerHTML = "0";
+  localStorage.setItem("playerOScore", "0");
+  localStorage.setItem("playerXScore", "0");
+}
+
+function WinnerModal(m) {
+  let winner = document.getElementById("winner");
+  winner.innerHTML = m;
+  document.getElementById("winnerModal").style.display = "flex";
+}
+function closeWinnerModal() {
+  document.getElementById("winnerModal").style.display = "none";
+  newGame();
 }
